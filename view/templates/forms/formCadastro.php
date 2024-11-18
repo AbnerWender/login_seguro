@@ -1,4 +1,4 @@
-<form action="index.php?acao=cadastrar-usuario" method="post">
+<form action="Cadastro.php?acao=cadastrar-usuario" method="post">
     <div class="row-input">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome">
@@ -20,10 +20,20 @@
         <button onclick="togglePassword(event, this)" id="btn-password">Ver Senha</button>
     </div>
 
-    <div class="row-input">
-        <label for="endereco">Endereco</label>
-        <input type="text" name="endereco" id="endereco">
-    </div>
-
     <input type="submit" value="Cadastrar">
 </form>
+
+<script>
+    function togglePassword(event, button) {
+    event.preventDefault();
+    const senha = document.getElementById("senha");
+
+    if (senha.getAttribute("type") === "password") {
+        senha.setAttribute("type", "text");
+        button.textContent = "Ocultar Senha";
+    } else {
+        senha.setAttribute("type", "password");
+        button.textContent = "Ver Senha";
+    }
+}
+</script>

@@ -1,4 +1,5 @@
 create database seguranca;
+
 use seguranca;
 
 create table usuario(

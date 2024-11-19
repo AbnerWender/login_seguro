@@ -1,12 +1,12 @@
-<form action="Cadastro.php?acao=cadastrar-usuario" method="post">
+<form action="Cadastro.php?acao=cadastrar" method="post">
     <div class="row-input">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome">
     </div>
 
     <div class="row-input">
-        <label for="nascimento">Data de Nascimento:</label>
-        <input type="date" name="nascimento" id="nascimento">
+        <label for="data_nasc">Data de Nascimento:</label>
+        <input type="date" name="data_nasc" id="data_nasc">
     </div>
 
     <div class="row-input">

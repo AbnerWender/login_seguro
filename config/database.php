@@ -5,17 +5,21 @@ class Banco{
     const banco = 'seguranca';
     const usuario = 'root';
     const senha = '';
-    protected $conexao;
+    public $conexao;
 
-    protected function conectar(){
+    public function conectar(){
         $this->conexao = new mysqli(self::host, self::usuario, self::senha, self::banco);
-        if(!$this->conexao){
-            echo 'erro na conexao';
-        }else{
-            return $this->conexao;
+
+        if ($this->conexao->connect_error)
+        {
+            die("Erro de conexão: " . $this->conexao->connect_error);
         }
+        return $this->conexao;
     }
+
     public function desconectar(){
-        $this->conexao = $this->conexao->close();
+        if ($this->conexao) {
+            $this->conexao->close();
+        }    
     }
 }

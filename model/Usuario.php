@@ -17,7 +17,7 @@ class Usuario{
     }
 
     public function getIdUsuario($id){
-        $query = "SELECT * FROM {$this->table} WHERE id = {$this->$id}";
+        $query = "SELECT * FROM {$this->tabela} WHERE id = {$this->$id}";
         $resultado = $this->conexao->query($query);
         return $resultado->fetch_all(MSQLI_ASSOC);
     }
@@ -25,13 +25,14 @@ class Usuario{
     public function cadastrar(){
         $this->senha = password_hash($this->senha, PASSWORD_DEFAULT);
         
-        $query = "INSERT INTO {$this->table} (nome, data_nasc, email, senha) VALUES ('{$this->nome}','{$this->data_nasc}', '{$this->email}','{$this->senha}');";
+        $query = "INSERT INTO {$this->tabela} (nome, data_nasc, email, senha) VALUES ('{$this->nome}','{$this->data_nasc}', '{$this->email}','{$this->senha}');";
 
         return $this->conexao->query($query);
     }
 
-    public function logar(){
-        $query = "SELECT * FROM {$this->table} WHERE email = ? LIMIT 1";
+    public function login(){
+        $query = "SELECT * FROM {$this->tabela} WHERE email = ? LIMIT 1";
+        var_dump($this->email, $this->senha);
         $stmt = $this->conexao->prepare($query);
         $stmt->bind_param("s", $this->email);
         $stmt->execute();

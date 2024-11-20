@@ -1,0 +1,30 @@
+@import url('style.css');
+
+.login-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: aliceblue;
+}
+
+#form-login{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 15px;
+
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#form-login input{
+    border: 1.2px solid #f3f3f3;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: transparent;    
+}

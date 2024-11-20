@@ -1,11 +1,11 @@
 <?php
 
-require_once '../config/database.php';
-require_once '../model/Usuario.php';
+require_once '../../config/database.php';
+require_once '../../model/Usuario.php';
 
 class LoginController{
 
-    protected $banco;
+    public $banco;
 
     public function __construct(){
         $this->banco = new Banco();
@@ -14,12 +14,14 @@ class LoginController{
     public function login($email, $senha){
 
         $conexao = $this->banco->conectar();
+        var_dump($conexao); // teste
         $stmt = $conexao->prepare("SELECT senha FROM usuario WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
+            echo "Email encontrado. "; // teste
             $stmt->bind_result($senhaArmazenada);
             $stmt->fetch();
             
@@ -34,7 +36,5 @@ class LoginController{
 
         $stmt->close();
         $this->banco->desconectar();
-    }
-
-       
+    }  
 }

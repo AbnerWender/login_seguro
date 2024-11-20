@@ -1,0 +1,50 @@
+@import url('style.css');
+
+.box-cad-usuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: aliceblue;
+}
+
+#form-cadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 15px;
+
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#form-cadastro input{
+    border: 1.2px solid #f3f3f3;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: aliceblue;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+.row div{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+#btn-password{
+    border: 1.2px solid #f3f3f3;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: aliceblue;
+}
